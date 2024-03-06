@@ -12,11 +12,11 @@ import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-yaml";
 import "ace-builds/src-noconflict/mode-c_cpp";
 
-
 import "ace-builds/src-noconflict/keybinding-emacs";
 import "ace-builds/src-noconflict/keybinding-vim";
 
-import "ace-builds/src-noconflict/theme-monokai";
+
+import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-searchbox";
 
@@ -26,7 +26,7 @@ export default function Room({ socket }) {
   const [fetchedUsers, setFetchedUsers] = useState(() => []);
   const [fetchedCode, setFetchedCode] = useState(() => "");
   const [language, setLanguage] = useState(() => "javascript");
-  const [output, setOutput] = useState(() => "output");
+  const [output, setOutput] = useState(() => "");
   const [input, setInput] = useState(() => "");
   const [codeKeybinding, setCodeKeybinding] = useState(() => undefined);
 
@@ -142,7 +142,7 @@ export default function Room({ socket }) {
         className="roomCodeEditor"
         mode={language}
         keyboardHandler={codeKeybinding}
-        theme="monokai"
+        theme="twilight"
         name="collabEditor"
         width="auto"
         height="auto"
@@ -171,7 +171,7 @@ export default function Room({ socket }) {
           keyboardHandler={codeKeybinding}
           className="roomCodeEditor"
           mode="text"
-          theme="monokai"
+          theme="twilight"
         />
         {/* output editor---------------------------------------------------------------------------------------------------- */}
         <AceEditor
@@ -179,7 +179,7 @@ export default function Room({ socket }) {
           value={output}
           className="roomCodeEditor"
           mode="text"
-          theme="monokai"
+          theme="twilight"
         />
         {/* language and user list---------------------------------------------------------------------------------------------------- */}
         <div className="roomSidebarUsersWrapper">
