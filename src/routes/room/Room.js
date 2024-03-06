@@ -10,7 +10,6 @@ import "ace-builds/src-noconflict/mode-typescript";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-yaml";
-import "ace-builds/src-noconflict/mode-golang";
 import "ace-builds/src-noconflict/mode-c_cpp";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/mode-css";
@@ -35,7 +34,7 @@ export default function Room({ socket }) {
   const languagesAvailable = [
     "javascript",
     "java",
-    "c/cpp",
+    "c_cpp",
     "python",
     "typescript",
     "golang",
