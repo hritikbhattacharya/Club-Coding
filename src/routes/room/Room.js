@@ -11,8 +11,7 @@ import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-yaml";
 import "ace-builds/src-noconflict/mode-c_cpp";
-import "ace-builds/src-noconflict/mode-html";
-import "ace-builds/src-noconflict/mode-css";
+
 
 import "ace-builds/src-noconflict/keybinding-emacs";
 import "ace-builds/src-noconflict/keybinding-vim";
@@ -37,8 +36,6 @@ export default function Room({ socket }) {
     "c_cpp",
     "python",
     "typescript",
-    "golang",
-    "yaml",
     "html",
   ];
   const codeKeybindingsAvailable = ["default", "emacs", "vim"];
@@ -166,6 +163,7 @@ export default function Room({ socket }) {
       />
 
       <div className="roomSidebar ">
+        {/* input editor---------------------------------------------------------------------------------------------------- */}
         <AceEditor
           placeholder="Input"
           value={input}
@@ -175,16 +173,15 @@ export default function Room({ socket }) {
           mode="text"
           theme="monokai"
         />
+        {/* output editor---------------------------------------------------------------------------------------------------- */}
         <AceEditor
           placeholder="Output"
           value={output}
-          // onChange={outputChange}
-          // keyboardHandler={codeKeybinding}
           className="roomCodeEditor"
           mode="text"
           theme="monokai"
         />
-        {/* <div>${output}</div> */}
+        {/* language and user list---------------------------------------------------------------------------------------------------- */}
         <div className="roomSidebarUsersWrapper">
           <div className="flex justify-center items-center">
             <div className="languageFieldWrapper">
@@ -203,7 +200,7 @@ export default function Room({ socket }) {
               </select>
             </div>
 
-            <div className="languageFieldWrapper">
+            {/* <div className="languageFieldWrapper">
               <select
                 className="languageField"
                 name="codeKeybinding"
@@ -217,8 +214,10 @@ export default function Room({ socket }) {
                   </option>
                 ))}
               </select>
-            </div>
-            <button onClick={runCode}>Run</button>
+            </div> */}
+            <button className=" w-20 p-2 bg-white rounded-md" onClick={runCode}>
+              Run
+            </button>
           </div>
 
           <p className=" text-2xl font-bold text-white">Connected Users:</p>
