@@ -82,7 +82,7 @@ export default function Room({ socket }) {
   }
 
   function runCode() {
-    fetch("http://localhost:5000/compile")
+    fetch("https://clubcoding-backend.onrender.com/compile")
       .then((response) => response.text())
       .then((data) => {
         setOutput(data);
