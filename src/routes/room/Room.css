@@ -3,12 +3,14 @@
   flex-direction: column;
   gap: 10px;
   min-height: 100vh;
+  height: fit-content;
   background-color: #3c3b3b;
 }
 
 .roomSidebar {
   display: flex;
   flex-direction: column;
+  /* height: 100%; */
   gap: 10px;
 }
 
